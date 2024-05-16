@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<h1 class="text-danger">Update Employee</h1>
+<form action="/editEmployee" method="post" th:object="${em}">
+    <div class="form-group">
+        <input type="text" style="display: none" th:field="*{id}">
+        <label for="name">Employee Name:</label>
+        <input th:field="*{name}" type="text" class="form-control" name="name" id="name"
+               placeholder="Enter employee name">
+        <small th:errors="*{name}" class="form-text text-danger text-muted" style="color: red !important; "></small>
+        <label for="address">Address:</label>
+        <input th:field="*{address}" type="text" class="form-control" name="address" id="address"
+               placeholder="Enter address">
+        <small th:errors="*{address}" class="form-text text-danger text-muted" style="color: red !important;"></small>
+        <label for="dateOfBirth">Date of Birth:</label>
+        <input th:field="*{dateOfBirth}" type="date" class="form-control" name="dateOfBirth" id="dateOfBirth">
+        <small th:errors="*{dateOfBirth}" class="form-text text-danger text-muted"
+               style="color: red !important;"></small>
+        <label for="phone">Phone number:</label>
+        <input th:field="*{phone}" type="text" class="form-control" name="phone" id="phone"
+               placeholder="Enter phone number">
+        <small th:errors="*{phone}" class="form-text text-danger text-muted" style="color: red !important;"></small>
+    </div>
+    <input type="submit" value="Update">
+</form>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+</html>
